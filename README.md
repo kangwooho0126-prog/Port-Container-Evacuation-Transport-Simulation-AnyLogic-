@@ -2,39 +2,40 @@
 
 ##  Project Overview
 
-This project develops a high-fidelity simulation model for port container transportation and emergency evacuation under high-load conditions using AnyLogic.
+This project develops a high-fidelity simulation system for port container transportation and emergency evacuation using AnyLogic.
 
-The system models the end-to-end container flow, including unloading, yard storage, and internal transport, to evaluate system performance and identify operational bottlenecks.
+The model captures the full operational process, including container handling, yard storage, and internal transport, to evaluate system performance under large-scale scenarios.
 
 ---
 
 ##  Demo
 
-###  Quick Preview
-![simulation](demo_simulation.gif)
+![simulation_demo](port_transport_simulation_demo.gif)
 
-###  Full Simulation Video
-Watch full demo here:  
- (Put your Bilibili link here)
+
+
+---
+
+##  Simulation Preview
+
+### System Modeling (Process Flow)
+![logic](simulation_logic.png)
+
+### 3D Simulation Environment
+![3d](port_3d_view.png)
 
 ---
 
 ##  Problem Definition
 
-In large-scale port operations, especially under emergency conditions (e.g., extreme weather or safety risks), all containers must be evacuated within a limited time window.
+In large-scale port operations, especially under emergency scenarios, all containers must be evacuated within a limited time.
 
-This problem involves:
+Key challenges include:
 
-- High container volume (up to ~35,000 TEU)
-- Limited transport resources (trucks, cranes)
+- High container volume (~35,000 TEU)
+- Limited transport capacity (trucks, cranes)
 - Complex yard structure and road network
-- Strong coupling between equipment and transport operations
-
- Objective:
-
-- Minimize total evacuation time  
-- Avoid congestion and system deadlock  
-- Improve resource allocation efficiency  
+- Strong coupling between handling equipment and transport system
 
 ---
 
@@ -42,96 +43,74 @@ This problem involves:
 
 The simulation is built using **AnyLogic (Discrete Event + Agent-based modeling)**.
 
-### Key Components:
+### Key Components
 
 - **Yard System**  
-  Block–Bay–Row–Tier structure for container storage
+  Block–Bay–Row–Tier container storage structure
 
 - **Transport Network**  
-  Road topology with dynamic speed constraints
+  Road topology with routing and congestion constraints
 
 - **Resources**  
-  - Quay cranes (STS)  
-  - Yard cranes (RTG/RMG)  
   - Container trucks  
-  - Operators  
+  - Yard cranes  
+  - Handling equipment  
 
 - **Constraints**  
-  - Speed limits (yard vs road)  
-  - Turning radius (16.5m for trucks)  
-  - Yard capacity and density  
-  - Equipment handling rates  
+  - Speed limits in different zones  
+  - Vehicle turning radius  
+  - Yard capacity limits  
+  - Resource availability  
 
 ---
 
 ##  Simulation Logic
 
-The system simulates the following workflow:
+The system simulates the full operational workflow:
 
-1. Container unloading from vessels  
-2. Transfer to yard via cranes  
-3. Assignment to transport vehicles  
-4. Movement through port road network  
-5. Delivery to target evacuation yards  
+1. Container generation / unloading  
+2. Storage allocation in yard  
+3. Transport assignment  
+4. Vehicle routing through network  
+5. Delivery to evacuation zones  
 
-Transport and handling processes are modeled with queueing, routing, and resource allocation logic.
+The model integrates queueing, routing, and resource scheduling mechanisms.
 
 ---
 
 ##  Strategies
 
-Two scheduling strategies are implemented and compared:
+Two strategies are implemented:
 
-- **Dynamic Allocation Strategy**  
-  Flexible assignment of transport resources
-
-- **Priority-based Dispatching Strategy**  
-  Containers dispatched based on predefined priority rules
+- **Dynamic Resource Allocation**  
+- **Priority-based Dispatching**
 
 ---
 
 ##  Results & Insights
 
-Simulation experiments show:
-
-- Total evacuation time ranges from **15 to 31.7 days**, depending on container volume  
-- **Transport fleet size is the most critical factor** affecting system performance  
-- Increasing trucks significantly reduces evacuation time  
-- **Diminishing returns** appear when fleet size exceeds a threshold  
-- Major congestion occurs in **yard-to-road transition areas**
+- Total evacuation time ranges from **15 to 31.7 days**
+- Transport fleet size is the dominant factor
+- Increasing vehicles significantly reduces completion time
+- Diminishing returns appear beyond a threshold
+- Bottlenecks mainly occur at **yard-road interfaces**
 
 ---
 
-## Key Contributions
+##  Modeling Highlights
 
-- Built a realistic port transport simulation system using AnyLogic  
-- Modeled complex interactions between yard, transport, and equipment  
-- Identified system bottlenecks through simulation experiments  
-- Provided insights for **resource allocation and evacuation planning**
-
----
-##  Project Structure
-
-```text
-anylogic-port-simulation-model/
-├── model/
-│   └── port_model.alp           
-├── docs/
-│   ├── system_design.png         
-│   └── yard_structure.png        
-├── results/
-│   └── simulation_results.png    
-├── demo_simulation.gif           
-└── README.md
-```
+- Transport scheduling with resource constraints  
+- Dynamic routing with congestion effects  
+- Coupled crane–vehicle operations  
+- Simulation-based bottleneck identification  
 
 ---
 
-##  Future Work
+##  Note
 
-- Integrate optimization algorithms (e.g., vehicle routing, scheduling optimization)  
-- Combine simulation with machine learning for adaptive decision-making  
-- Extend to real-time digital twin applications  
+Due to confidentiality considerations, the full AnyLogic model and dataset are not publicly available.
+
+However, system design, simulation results, and demonstrations are provided to illustrate the modeling and analysis process.
 
 ---
 
