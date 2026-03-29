@@ -4,15 +4,13 @@
 
 This project develops a high-fidelity simulation system for port container transportation and emergency evacuation using AnyLogic.
 
-The model captures the full operational process, including container handling, yard storage, and internal transport, to evaluate system performance under large-scale scenarios.
+The model captures the full operational process, including container handling, yard storage, and internal transport, to evaluate system performance and identify system bottlenecks under large-scale scenarios.
 
 ---
 
 ##  Demo
 
-![simulation_demo](port_transport_simulation_demo.gif)
-
-
+![simulation](demo_simulation.gif)
 
 ---
 
@@ -28,7 +26,7 @@ The model captures the full operational process, including container handling, y
 
 ##  Problem Definition
 
-In large-scale port operations, especially under emergency scenarios, all containers must be evacuated within a limited time.
+In large-scale port operations, especially under emergency conditions, all containers must be evacuated within a limited time window.
 
 Key challenges include:
 
@@ -39,14 +37,14 @@ Key challenges include:
 
 ---
 
-##  System Modeling
+## ⚙️ System Modeling
 
-The simulation is built using **AnyLogic (Discrete Event + Agent-based modeling)**.
+The simulation is built using **AnyLogic**, a multi-method simulation platform supporting discrete-event and agent-based modeling. :contentReference[oaicite:0]{index=0}  
 
 ### Key Components
 
 - **Yard System**  
-  Block–Bay–Row–Tier container storage structure
+  Block–Bay–Row–Tier structure for container storage
 
 - **Transport Network**  
   Road topology with routing and congestion constraints
@@ -66,7 +64,7 @@ The simulation is built using **AnyLogic (Discrete Event + Agent-based modeling)
 
 ##  Simulation Logic
 
-The system simulates the full operational workflow:
+The system simulates the full workflow:
 
 1. Container generation / unloading  
 2. Storage allocation in yard  
@@ -80,7 +78,7 @@ The model integrates queueing, routing, and resource scheduling mechanisms.
 
 ##  Strategies
 
-Two strategies are implemented:
+Two scheduling strategies are implemented:
 
 - **Dynamic Resource Allocation**  
 - **Priority-based Dispatching**
@@ -90,17 +88,17 @@ Two strategies are implemented:
 ##  Results & Insights
 
 - Total evacuation time ranges from **15 to 31.7 days**
-- Transport fleet size is the dominant factor
-- Increasing vehicles significantly reduces completion time
-- Diminishing returns appear beyond a threshold
-- Bottlenecks mainly occur at **yard-road interfaces**
+- Transport fleet size is the dominant factor affecting system performance
+- Increasing transport resources significantly reduces completion time
+- Diminishing returns appear beyond a certain threshold
+- Bottlenecks mainly occur at **yard-to-road transition areas**
 
 ---
 
 ##  Modeling Highlights
 
 - Transport scheduling with resource constraints  
-- Dynamic routing with congestion effects  
+- Dynamic routing under congestion conditions  
 - Coupled crane–vehicle operations  
 - Simulation-based bottleneck identification  
 
@@ -108,9 +106,9 @@ Two strategies are implemented:
 
 ##  Note
 
-Due to confidentiality considerations, the full AnyLogic model and dataset are not publicly available.
+Due to confidentiality considerations, the full AnyLogic model file and dataset are not publicly available.
 
-However, system design, simulation results, and demonstrations are provided to illustrate the modeling and analysis process.
+However, system design, simulation previews, and results are provided to demonstrate the modeling and analysis process.
 
 ---
 
